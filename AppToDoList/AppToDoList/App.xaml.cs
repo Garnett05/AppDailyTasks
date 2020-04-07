@@ -10,7 +10,7 @@ namespace AppToDoList
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new AppToDoList.Pages.RegisterPage());
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
