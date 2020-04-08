@@ -12,24 +12,41 @@
                 <Label Text="Thursday, 07/04" TextColor="White" HorizontalOptions="Start" VerticalOptions="End" />
             </StackLayout>
             <StackLayout x:Name="sLTasks" Padding="10" Spacing="10">
-                <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image VerticalOptions="Center" />
+                <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                    <Image VerticalOptions="Center" Source="checkOff.png" />
                     <Label Text="Task 1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
-                    <Image  VerticalOptions="Center"/>
-                    <Image  VerticalOptions="Center"/>
+                    <BoxView BackgroundColor="Red" CornerRadius="15" WidthRequest="30" />
+                    <Image  VerticalOptions="Center" Source="trash.png" BackgroundColor="Blue"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image  VerticalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                    <Image VerticalOptions="Center" Source="checkOff.png" />
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Spacing="0">
                         <Label Text="Task 1" />
                         <Label Text="Finalized in 07/04/2020 - 15:12:27" FontSize="12" />
                     </StackLayout>
-                    <Image  VerticalOptions="Center"/>
-                    <Image  VerticalOptions="Center"/>
+                    <BoxView BackgroundColor="Orange" CornerRadius="13" WidthRequest="30" />
+                    <Image  VerticalOptions="Center" />
                 </StackLayout>
-            </StackLayout>
-            <Button Text="Add" HorizontalOptions="Center" />
+
+                <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                    <Image VerticalOptions="Center" Source="checkOff.png" />
+                    <Label Text="Task 1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                    <BoxView BackgroundColor="Green" CornerRadius="15" WidthRequest="30" />
+                    <Image  VerticalOptions="Center" Source="trash.png" BackgroundColor="Blue"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
+                    <Image VerticalOptions="Center" Source="checkOff.png" />
+                    <Label Text="Task 1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                    <BoxView BackgroundColor="Yellow" CornerRadius="15" WidthRequest="30" />
+                    <Image  VerticalOptions="Center" Source="trash.png" BackgroundColor="Blue"/>
+                </StackLayout>
+                
+                <StackLayout >
+                    <Button ImageSource="addBlue.png" Clicked="ActionGoRegisterPage" BackgroundColor="Transparent" />
+                </StackLayout>                
+            </StackLayout>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

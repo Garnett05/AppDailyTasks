@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppToDoList.Pages.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Margin="10">
+            <Label Text="Name" FontAttributes="Bold" />
+            <Entry x:Name="txtName" />
+            <Label Text="Priority" FontAttributes="Bold" />
+            <StackLayout x:Name="sLPriorities" >
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <BoxView BackgroundColor="Red" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
+                    <Label Text="Urgent and important" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <BoxView BackgroundColor="Orange" CornerRadius="10" HeightRequest="10" WidthRequest="18" />                    
+                    <Label Text="Urgent but not important" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <BoxView BackgroundColor="Yellow" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
+                    <Label Text="Not urgent but important" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <BoxView BackgroundColor="Green" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
+                    <Label Text="Not Urgent and not important" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </StackLayout>
+            <Button Text="Ok" TextColor="White" BackgroundColor="Blue" HorizontalOptions="End" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

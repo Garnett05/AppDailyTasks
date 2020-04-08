@@ -17,5 +17,9 @@ namespace AppToDoList.Pages
             InitializeComponent();                                    
             NavigationPage.SetHasNavigationBar(this, false); // Hide title bar
         }
+        private void ActionGoRegisterPage (object sender, EventArgs args)
+        {
+            Navigation.PushAsync(new RegisterPage());
+        }
     }
 }
