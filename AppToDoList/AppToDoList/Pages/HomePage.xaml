@@ -9,9 +9,10 @@
         <StackLayout>
             <StackLayout BackgroundColor="Blue" HeightRequest="250">
                 <Label Text="My day" TextColor="White" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                <Label Text="Thursday, 07/04" TextColor="White" HorizontalOptions="Start" VerticalOptions="End" />
+                <Label x:Name="datetimeNow" TextColor="White" HorizontalOptions="Start" VerticalOptions="End" />
             </StackLayout>
             <StackLayout x:Name="sLTasks" Padding="10" Spacing="10">
+                
                 <StackLayout Orientation="Horizontal" Spacing="15" HeightRequest="30">
                     <Image VerticalOptions="Center" Source="checkOff.png" />
                     <Label Text="Task 1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
@@ -42,11 +43,11 @@
                     <BoxView BackgroundColor="Yellow" CornerRadius="15" WidthRequest="30" />
                     <Image  VerticalOptions="Center" Source="trash.png" BackgroundColor="Blue"/>
                 </StackLayout>
-                
-                <StackLayout >
-                    <Button ImageSource="addBlue.png" Clicked="ActionGoRegisterPage" BackgroundColor="Transparent" />
-                </StackLayout>                
-            </StackLayout>            
+
+            </StackLayout>
+            <StackLayout>
+                <Button ImageSource="addBlue.png" Clicked="ActionGoRegisterPage" BackgroundColor="Transparent" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

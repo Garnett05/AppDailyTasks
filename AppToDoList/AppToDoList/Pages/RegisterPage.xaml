@@ -13,22 +13,37 @@
             <StackLayout x:Name="sLPriorities" >
                 <StackLayout Spacing="10" Orientation="Horizontal">
                     <BoxView BackgroundColor="Red" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
-                    <Label Text="Urgent and important" HorizontalOptions="FillAndExpand" />
+                    <Label Text="Urgent and important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ActionPrioritySelected" />
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
+
                 <StackLayout Spacing="10" Orientation="Horizontal">
-                    <BoxView BackgroundColor="Orange" CornerRadius="10" HeightRequest="10" WidthRequest="18" />                    
-                    <Label Text="Urgent but not important" HorizontalOptions="FillAndExpand" />
+                    <BoxView BackgroundColor="Orange" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
+                    <Label Text="Urgent but not important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ActionPrioritySelected" />
+                    </StackLayout.GestureRecognizers>
+
                 </StackLayout>
-                <StackLayout Spacing="10" Orientation="Horizontal">
+                <StackLayout Spacing="10" Orientation="Horizontal" >
                     <BoxView BackgroundColor="Yellow" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
-                    <Label Text="Not urgent but important" HorizontalOptions="FillAndExpand" />
+                    <Label Text="Not urgent but important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ActionPrioritySelected" />
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
+
                 <StackLayout Spacing="10" Orientation="Horizontal">
                     <BoxView BackgroundColor="Green" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
-                    <Label Text="Not Urgent and not important" HorizontalOptions="FillAndExpand" />
+                    <Label Text="Not Urgent and not important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ActionPrioritySelected" />
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
             </StackLayout>
-            <Button Text="Ok" TextColor="White" BackgroundColor="Blue" HorizontalOptions="End" />
+            <Button Text="Ok" Clicked="ActionSave" TextColor="White" BackgroundColor="Blue" HorizontalOptions="End" />
 
         </StackLayout>
     </ContentPage.Content>

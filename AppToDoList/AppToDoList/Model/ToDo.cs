@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
+using Xamarin.Forms;
+
 namespace AppToDoList.Model
 {
     public class ToDo
     {
         public string Name { get; set; }
         public DateTime EndTask { get; set; }
-        public byte Priority { get; set; }
-                
+        public BoxView Priority { get; set; }
+
         private List<ToDo> List { get; set; }
         public void SaveTask(ToDo task)
         {
+            List = ListAllTasks();
             List.Add(task);
             SaveProperties(List);
         }
@@ -23,6 +26,7 @@ namespace AppToDoList.Model
         }
         public void EndOfTask(int index, ToDo task)
         {
+            List = ListAllTasks();
             List.RemoveAt(index);
 
             List.Add(task);
