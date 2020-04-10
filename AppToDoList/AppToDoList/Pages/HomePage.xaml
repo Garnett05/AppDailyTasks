@@ -7,14 +7,14 @@
              x:Class="AppToDoList.Pages.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="Blue" HeightRequest="250">
+            <StackLayout BackgroundColor="Blue" HeightRequest="250" Padding="10">
                 <Label Text="My day" TextColor="White" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                 <Label x:Name="datetimeNow" TextColor="White" HorizontalOptions="Start" VerticalOptions="End" />
             </StackLayout>
-            <StackLayout x:Name="sLTasks" Padding="10" Spacing="10">                                             
+            <StackLayout x:Name="sLTasks" Padding="10" Spacing="10">
 
             </StackLayout>
-            <StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand" >
                 <Button ImageSource="addBlue.png" Clicked="ActionGoRegisterPage" BackgroundColor="Transparent" />
             </StackLayout>
         </StackLayout>

@@ -56,7 +56,7 @@ namespace AppToDoList.Pages
             if (task.EndTask == null)
             {
                 stackCentral = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.FillAndExpand, Text = task.Name };
-            }
+            }            
             else
             {
                 stackCentral = new StackLayout() { VerticalOptions = LayoutOptions.Center, Spacing = 0, HorizontalOptions = LayoutOptions.FillAndExpand };
@@ -65,6 +65,10 @@ namespace AppToDoList.Pages
             }
             
             Image check = new Image() { VerticalOptions = LayoutOptions.Center, Source = "checkOff.png"};
+            if (task.EndTask != null)
+            {
+                check.Source = "checkOn.png";
+            }
             TapGestureRecognizer checkTap = new TapGestureRecognizer();
             checkTap.Tapped += delegate
             {
