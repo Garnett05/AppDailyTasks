@@ -9,7 +9,7 @@ namespace AppToDoList.Model
     public class ToDo
     {
         public string Name { get; set; }
-        public DateTime EndTask { get; set; }
+        public DateTime? EndTask { get; set; }
         public BoxView Priority { get; set; }
 
         private List<ToDo> List { get; set; }

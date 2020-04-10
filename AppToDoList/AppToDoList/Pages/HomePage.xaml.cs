@@ -49,7 +49,7 @@ namespace AppToDoList.Pages
             {
                 stackCentral = new StackLayout() { VerticalOptions = LayoutOptions.Center, Spacing = 0, HorizontalOptions = LayoutOptions.FillAndExpand };
                 ((StackLayout)stackCentral).Children.Add(new Label() { Text = task.Name, TextColor = Color.Gray });
-                ((StackLayout)stackCentral).Children.Add(new Label() { Text = "Finalizado em" + task.EndTask.ToString("dd/MM/yyyy - hh:mm"), TextColor = Color.Gray, FontSize = 12 });
+                ((StackLayout)stackCentral).Children.Add(new Label() { Text = "Finalizado em" + task.EndTask.Value.ToString("dd/MM/yyyy - hh:mm"), TextColor = Color.Gray, FontSize = 12 });
             }
             
             Image check = new Image() { VerticalOptions = LayoutOptions.Center, Source = "checkOff.png"};
