@@ -38,17 +38,17 @@ namespace AppToDoList.Model
         }
         private void SaveProperties(List<ToDo> list)
         {
-            if (App.Current.Properties.ContainsKey("Tasks"))
+            if (App.Current.Properties.ContainsKey("NoEsPossible"))
             {
-                App.Current.Properties.Remove("Tasks");
+                App.Current.Properties.Remove("NoEsPossible");
             }
-            App.Current.Properties.Add("Tasks", list);
+            App.Current.Properties.Add("NoEsPossible", list);
         }
         private List<ToDo> ListProperties()
         {
-            if (App.Current.Properties.ContainsKey("Tasks"))
+            if (App.Current.Properties.ContainsKey("NoEsPossible"))
             {
-                return (List<ToDo>)App.Current.Properties["Tasks"];
+                return (List<ToDo>)App.Current.Properties["NoEsPossible"];
             }
             return new List<ToDo>();
         }
