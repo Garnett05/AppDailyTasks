@@ -37,20 +37,20 @@ namespace AppToDoList.Model
         {
             return ListProperties();
         }
-        private void SaveProperties(List<ToDo> list)
+        private void SaveProperties(List<ToDo> List)
         {
-            if (App.Current.Properties.ContainsKey("NoEsPossible"))
+            if (App.Current.Properties.ContainsKey("NewTasks"))
             {
-                App.Current.Properties.Remove("NoEsPossible");
+                App.Current.Properties.Remove("NewTasks");
             }
-            string jsonContent = JsonConvert.SerializeObject(list);
-            App.Current.Properties.Add("NoEsPossible", jsonContent);
+            string jsonContent = JsonConvert.SerializeObject(List);
+            App.Current.Properties.Add("NewTasks", jsonContent);
         }
         private List<ToDo> ListProperties()
-        {
-            if (App.Current.Properties.ContainsKey("NoEsPossible"))
+        {            
+            if (App.Current.Properties.ContainsKey("NewTasks"))
             {
-                string jsonContent =(string)App.Current.Properties["NoEsPossible"];
+                string jsonContent =(string)App.Current.Properties["NewTasks"];
                 List<ToDo> list = JsonConvert.DeserializeObject<List<ToDo>>(jsonContent);
                 return list;
                 //return (List<ToDo>)App.Current.Properties["NoEsPossible"];
