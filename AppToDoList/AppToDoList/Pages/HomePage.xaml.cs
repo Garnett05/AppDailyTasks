@@ -30,17 +30,27 @@ namespace AppToDoList.Pages
         {
             sLTasks.Children.Clear();
             List<ToDo> list = new ToDo().ListAllTasks();
+            int i = 0;
             foreach (ToDo x in list)
             {
-                FeedingStackLayout(x);
+                FeedingStackLayout(x, i);
+                i++;
             }
         }        
         
-        public void FeedingStackLayout(ToDo task)
+        public void FeedingStackLayout(ToDo task, int index)
         {
             var convert = new ColorTypeConverter();
             Color colorBox = (Color)convert.ConvertFromInvariantString(task.Priority);
+                        
             Image delete = new Image() { VerticalOptions = LayoutOptions.Center, Source = "trash.png" };
+            TapGestureRecognizer deleteTap = new TapGestureRecognizer();
+            deleteTap.Tapped += delegate
+            {
+                new ToDo().DeleteTask(index);
+                LoadingTasks();
+            };
+            delete.GestureRecognizers.Add(deleteTap);
             BoxView bView = new BoxView() { CornerRadius = 13, WidthRequest = 30, BackgroundColor = colorBox };
             View stackCentral = null;
             if (task.EndTask == null)
@@ -55,7 +65,14 @@ namespace AppToDoList.Pages
             }
             
             Image check = new Image() { VerticalOptions = LayoutOptions.Center, Source = "checkOff.png"};
-            
+            TapGestureRecognizer checkTap = new TapGestureRecognizer();
+            checkTap.Tapped += delegate
+            {
+                new ToDo().EndOfTask(index, task);
+                LoadingTasks();
+            };
+            check.GestureRecognizers.Add(checkTap);
+
             StackLayout stack = new StackLayout() { Orientation = StackOrientation.Horizontal, Spacing = 15, HeightRequest = 30 };
             stack.Children.Add(check);
             stack.Children.Add(stackCentral);

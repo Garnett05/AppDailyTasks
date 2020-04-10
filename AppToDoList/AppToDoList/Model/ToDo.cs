@@ -20,9 +20,10 @@ namespace AppToDoList.Model
             List.Add(task);
             SaveProperties(List);
         }
-        public void DeleteTask(ToDo task)
+        public void DeleteTask(int index)
         {
-            List.Remove(task);
+            List = ListAllTasks();
+            List.RemoveAt(index);
             SaveProperties(List);
         }
         public void EndOfTask(int index, ToDo task)
@@ -30,6 +31,7 @@ namespace AppToDoList.Model
             List = ListAllTasks();
             List.RemoveAt(index);
 
+            task.EndTask = DateTime.Now;
             List.Add(task);
             SaveProperties(List);
         }
