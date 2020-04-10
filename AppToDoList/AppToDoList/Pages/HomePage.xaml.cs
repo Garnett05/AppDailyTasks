@@ -25,15 +25,17 @@ namespace AppToDoList.Pages
         {
             Navigation.PushAsync(new RegisterPage());
         }
+
         private void LoadingTasks()
         {
             sLTasks.Children.Clear();
             List<ToDo> list = new ToDo().ListAllTasks();
-            foreach (ToDo task in list)
+            foreach (ToDo x in list)
             {
-                FeedingStackLayout(task);
+                FeedingStackLayout(x);
             }
-        }
+        }        
+        
         public void FeedingStackLayout(ToDo task)
         {
             Image delete = new Image() { VerticalOptions = LayoutOptions.Center, Source = "trash.png" };
@@ -54,7 +56,7 @@ namespace AppToDoList.Pages
             
             StackLayout stack = new StackLayout() { Orientation = StackOrientation.Horizontal, Spacing = 15, HeightRequest = 30 };
             stack.Children.Add(check);
-            stack.Children.Add((View)stackCentral);
+            stack.Children.Add(stackCentral);
             stack.Children.Add(bView);
             stack.Children.Add(delete);
 
