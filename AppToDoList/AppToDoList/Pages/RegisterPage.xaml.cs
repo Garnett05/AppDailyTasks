@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using AppToDoList.Model;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace AppToDoList.Pages
@@ -17,6 +18,7 @@ namespace AppToDoList.Pages
     {
         private BoxView bxView { get; set; }
         private bool action { get; set; }
+        private string stgBoxView { get; set; }
         public RegisterPage()
         {
             InitializeComponent();
@@ -31,9 +33,23 @@ namespace AppToDoList.Pages
             }
 
             ((Label)((StackLayout)sender).Children[1]).TextColor = Color.Black;
-            BoxView source = ((BoxView)((StackLayout)sender).Children[0]);
-            bxView = new BoxView();
-            bxView.BackgroundColor = source.BackgroundColor;
+            string ahtomanocu = ((Label)((StackLayout)sender).Children[1]).Text;
+            if (ahtomanocu == "Urgent and important")
+            {
+                stgBoxView = "Red";
+            }
+            else if (ahtomanocu == "Urgent but not important")
+            {
+                stgBoxView = "Orange";
+            }
+            else if (ahtomanocu == "Not urgent but important")
+            {
+                stgBoxView = "Yellow";
+            }
+            else
+            {
+                stgBoxView = "Green";
+            }                        
             action = true;
         }
         public void ActionSave (object sender, EventArgs args)
@@ -54,7 +70,7 @@ namespace AppToDoList.Pages
             {
                 ToDo task = new ToDo();
                 task.Name = txtName.Text.Trim();
-                task.Priority = bxView;
+                task.Priority = stgBoxView;
 
                 new ToDo().SaveTask(task);
 

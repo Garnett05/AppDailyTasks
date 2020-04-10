@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AppToDoList.Model;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -38,8 +38,10 @@ namespace AppToDoList.Pages
         
         public void FeedingStackLayout(ToDo task)
         {
+            var convert = new ColorTypeConverter();
+            Color colorBox = (Color)convert.ConvertFromInvariantString(task.Priority);
             Image delete = new Image() { VerticalOptions = LayoutOptions.Center, Source = "trash.png" };
-            BoxView bView = new BoxView() { CornerRadius = 13, WidthRequest = 30, BackgroundColor = task.Priority.BackgroundColor };
+            BoxView bView = new BoxView() { CornerRadius = 13, WidthRequest = 30, BackgroundColor = colorBox };
             View stackCentral = null;
             if (task.EndTask == null)
             {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 using Xamarin.Forms;
 
@@ -9,8 +10,8 @@ namespace AppToDoList.Model
     public class ToDo
     {
         public string Name { get; set; }
-        public DateTime? EndTask { get; set; }
-        public BoxView Priority { get; set; }
+        public DateTime? EndTask { get; set; }        
+        public string Priority { get; set; }
 
         private List<ToDo> List { get; set; }
         public void SaveTask(ToDo task)
@@ -42,13 +43,17 @@ namespace AppToDoList.Model
             {
                 App.Current.Properties.Remove("NoEsPossible");
             }
-            App.Current.Properties.Add("NoEsPossible", list);
+            string jsonContent = JsonConvert.SerializeObject(list);
+            App.Current.Properties.Add("NoEsPossible", jsonContent);
         }
         private List<ToDo> ListProperties()
         {
             if (App.Current.Properties.ContainsKey("NoEsPossible"))
             {
-                return (List<ToDo>)App.Current.Properties["NoEsPossible"];
+                string jsonContent =(string)App.Current.Properties["NoEsPossible"];
+                List<ToDo> list = JsonConvert.DeserializeObject<List<ToDo>>(jsonContent);
+                return list;
+                //return (List<ToDo>)App.Current.Properties["NoEsPossible"];
             }
             return new List<ToDo>();
         }

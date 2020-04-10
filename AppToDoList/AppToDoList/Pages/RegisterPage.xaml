@@ -11,7 +11,7 @@
             <Entry x:Name="txtName" />
             <Label Text="Priority" FontAttributes="Bold" />
             <StackLayout x:Name="sLPriorities" >
-                <StackLayout Spacing="10" Orientation="Horizontal">
+                <StackLayout Spacing="10" Orientation="Horizontal" x:Name="Priority0">
                     <BoxView BackgroundColor="Red" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
                     <Label Text="Urgent and important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
                     <StackLayout.GestureRecognizers>
@@ -19,7 +19,7 @@
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 
-                <StackLayout Spacing="10" Orientation="Horizontal">
+                <StackLayout Spacing="10" Orientation="Horizontal" x:Name="Priority1">
                     <BoxView BackgroundColor="Orange" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
                     <Label Text="Urgent but not important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
                     <StackLayout.GestureRecognizers>
@@ -27,7 +27,7 @@
                     </StackLayout.GestureRecognizers>
 
                 </StackLayout>
-                <StackLayout Spacing="10" Orientation="Horizontal" >
+                <StackLayout Spacing="10" Orientation="Horizontal" x:Name="Priority2">
                     <BoxView BackgroundColor="Yellow" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
                     <Label Text="Not urgent but important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
                     <StackLayout.GestureRecognizers>
@@ -35,7 +35,7 @@
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 
-                <StackLayout Spacing="10" Orientation="Horizontal">
+                <StackLayout Spacing="10" Orientation="Horizontal" x:Name="Priority3">
                     <BoxView BackgroundColor="Green" CornerRadius="10" HeightRequest="10" WidthRequest="18" />
                     <Label Text="Not Urgent and not important" TextColor="Gray" HorizontalOptions="FillAndExpand" />
                     <StackLayout.GestureRecognizers>
